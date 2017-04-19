@@ -1,20 +1,10 @@
 <h1>id: 
 <%= @task.id %>
- のメッセージ編集ページ</h1>
+ のタスク編集ページ</h1>
 
-<%= form_for(@task) do |f| %>
-
-  
-<%= f.label :content, 'タスク' %>
-
-  
-<%= f.text_field :content %>
+<%= render 'form', task: @task %>
 
 
-  
-<%= f.submit '追加' %>
-
-<% end %>
 
 
 <%= link_to '一覧に戻る', tasks_path %>
