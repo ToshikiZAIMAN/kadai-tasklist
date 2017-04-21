@@ -60,6 +60,9 @@ class TasksController < ApplicationController
   def set_task
     # @task = Task.find(params[:id])
     @task = current_user.tasks.find_by(id: params[:id])
+    unless @task
+      redirect_to root_path
+    end
   end
   
   def task_params
